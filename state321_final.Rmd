@@ -1,30 +1,13 @@
 ---
 title: "STAT321_FinalReport"
-output: pdf_document
-date: "2023-06-05"
----19
+output:
+  html_document:
+    df_print: paged
+date: "2023-06-08"
+---
+
 # FINAL Report: Investigating The Relationship Between Land Use Diversity and Pedestrian Activity in Seattle
 ### Authors: Finch Brown and JP Lopez
-
-```{r}
-
-## Prerequisite
-### Load Libraries
-install.packages("tidyverse")
-library(tidyverse)
-install.packages("dplyr")
-library(dplyr)
-install.packages("ggplot2")
-library(ggplot2)
-
-### loading datasets
-people_moving_df <- read.csv("Public_Life.csv")
-View(people_moving_df)
-
-locations_df <- read.csv("locations.csv")
-View(locations_df)
-
-```
 
 ## Introduction and Research Design
 The primary research question guiding this investigation is: Does land use diversity influence the level of pedestrian activity in urban spaces? This study's focus stems from the conjecture that diversity in land use could be a significant factor influencing the movement of pedestrians. From a theoretical perspective, diverse land uses offer more opportunities for activity and thus draw more pedestrian traffic. Therefore, our hypothesis for this study is as follows:
@@ -42,12 +25,30 @@ If the data analysis reveals a significant positive relationship between land us
 ### A data section describing the source of the data, measurement, and uses plots to summarize the dependent variable
 ### Exploratory Data Analysis: analysis: Let the data speak by constructing relevant and polished plots or visuals that reveal important patterns and relationships related to the research question and hypotheses. Provide a narrative explanation of these patterns and their potential influence on the model specification.
 
+
+```{r}
+
+## Prerequisite
+### Load Libraries
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+
+### loading datasets
+people_moving_df <- read.csv("Public_Life.csv")
+View(people_moving_df)
+
+locations_df <- read.csv("locations.csv")
+View(locations_df)
+
+```
+
+
 The datasets used in this report were sourced from the Public Life Data repository by Seattle's Department of Transportation (link: https://data.seattle.gov/Transportation/Public-Life-Data-People-Moving/7rx6-5pgd). The primary dataset, 'Public Life Data: People Moving,' comprises pedestrian counts from different Seattle locations. The second dataset, 'Locations,' contains various land use types (e.g., Residential, Mixed, Commercial, etc.).
 
 To illustrate the dependent variable, i.e., pedestrian movement, a boxplot is presented, demonstrating pedestrian counts in single-use and mixed-use spaces.
 
 ```{r}
-
 ### isolate relevant columns
 unique(locations_df$location_character)
 small_loc_df <- data.frame(locations_df$location_id, locations_df$location_line_typology_vehicular)
@@ -79,7 +80,6 @@ new_df$land_use <- ifelse(new_df$classification == 1, "Mixed Use", "Single Use")
 new_df_clean <- na.omit(new_df)
 
 ### Install and load the 'moments' package
-install.packages('moments')
 library(moments)
 
 ## Exploratory Data Analysis
@@ -130,18 +130,19 @@ model1 <- lm(total_count ~ classification, data = new_df_clean)
 summary(model1)  
 
 # Add controls progressively and present the full specification?
-model2 <- lm(total_count ~ classification + control1, data = new_df_clean)
-summary(model2)
+# model2 <- lm(total_count ~ classification + control1, data = new_df_clean)
+# summary(model2)
 
-model3 <- lm(total_count ~ classification + control1 + control2, data = new_df_clean)
-summary(model3)
+# model3 <- lm(total_count ~ classification + control1 + control2, data = new_df_clean)
+# summary(model3)
 
 # Final model with all controls
-model4 <- lm(total_count ~ classification + control1 + control2 + control3, data = new_df_clean)
-summary(model4)
-
+# model4 <- lm(total_count ~ classification + control1 + control2 + control3, data = new_df_clean)
+# summary(model4)
+```
 To illustrate the main relationship of interest, a scatterplot is provided below. The scatterplot showcases the distribution of pedestrian counts relative to land use diversity.
 
+```{r}
 # remove rows with NAs
 new_df_clean <- na.omit(new_df)
 
@@ -150,12 +151,15 @@ ggplot(new_df_clean, aes(x = land_use, y = total_count, color = land_use)) +
   geom_jitter(width = 0.3) +
   xlab("Land Use") +
   ylab("Pedestrians Through the Space")
-
+```
 The principal regression analysis was performed with the 'total_count' as the outcome variable and 'classification' (land use diversity) as the explanatory variable. The regression output is as follows:
+
+```{r}
+
 model <- lm(total_count ~ classification, data = new_df)
 summary(model)
-```
 
+```
 
 The model indicates a significant positive relationship between land use diversity and pedestrian activity. This relationship suggests that a higher level of land use diversity corresponds to an increase in pedestrian movement.
 

@@ -1,0 +1,517 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={STAT321\_FinalReport},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{STAT321\_FinalReport}
+\author{}
+\date{\vspace{-2.5em}2023-06-08}
+
+\begin{document}
+\maketitle
+
+\hypertarget{final-report-investigating-the-relationship-between-land-use-diversity-and-pedestrian-activity-in-seattle}{%
+\section{FINAL Report: Investigating The Relationship Between Land Use
+Diversity and Pedestrian Activity in
+Seattle}\label{final-report-investigating-the-relationship-between-land-use-diversity-and-pedestrian-activity-in-seattle}}
+
+\hypertarget{authors-finch-brown-and-jp-lopez}{%
+\subsubsection{Authors: Finch Brown and JP
+Lopez}\label{authors-finch-brown-and-jp-lopez}}
+
+\hypertarget{introduction-and-research-design}{%
+\subsection{Introduction and Research
+Design}\label{introduction-and-research-design}}
+
+The primary research question guiding this investigation is: Does land
+use diversity influence the level of pedestrian activity in urban
+spaces? This study's focus stems from the conjecture that diversity in
+land use could be a significant factor influencing the movement of
+pedestrians. From a theoretical perspective, diverse land uses offer
+more opportunities for activity and thus draw more pedestrian traffic.
+Therefore, our hypothesis for this study is as follows:
+
+H0: Land use diversity has no significant impact on pedestrian activity.
+(β\_diversity = 0) H1: Land use diversity positively influences
+pedestrian activity. (β\_diversity \textgreater{} 0)
+
+The importance of this research lies in its potential implications for
+urban development and planning, ultimately encouraging active and
+sustainable urban environments.
+
+The research design for this investigation utilizes observational data
+from real-world observations in Seattle. We have categorized each
+location according to the classifications used by the Gehl Institute's
+Public Life Data Protocol, distinguishing them into single-use or
+mixed-use areas. Our measurement of pedestrian activity is based on
+total counts of moving pedestrians recorded in each entry of the
+dataset.
+
+If the data analysis reveals a significant positive relationship between
+land use diversity and pedestrian activity, it will provide empirical
+support for our hypothesis, underscoring the contribution of diverse
+land use to increased pedestrian movement.
+
+\hypertarget{data-cleaning}{%
+\subsection{Data Cleaning}\label{data-cleaning}}
+
+\hypertarget{a-data-section-describing-the-source-of-the-data-measurement-and-uses-plots-to-summarize-the-dependent-variable}{%
+\subsubsection{A data section describing the source of the data,
+measurement, and uses plots to summarize the dependent
+variable}\label{a-data-section-describing-the-source-of-the-data-measurement-and-uses-plots-to-summarize-the-dependent-variable}}
+
+\hypertarget{exploratory-data-analysis-analysis-let-the-data-speak-by-constructing-relevant-and-polished-plots-or-visuals-that-reveal-important-patterns-and-relationships-related-to-the-research-question-and-hypotheses.-provide-a-narrative-explanation-of-these-patterns-and-their-potential-influence-on-the-model-specification.}{%
+\subsubsection{Exploratory Data Analysis: analysis: Let the data speak
+by constructing relevant and polished plots or visuals that reveal
+important patterns and relationships related to the research question
+and hypotheses. Provide a narrative explanation of these patterns and
+their potential influence on the model
+specification.}\label{exploratory-data-analysis-analysis-let-the-data-speak-by-constructing-relevant-and-polished-plots-or-visuals-that-reveal-important-patterns-and-relationships-related-to-the-research-question-and-hypotheses.-provide-a-narrative-explanation-of-these-patterns-and-their-potential-influence-on-the-model-specification.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Prerequisite}
+\DocumentationTok{\#\#\# Load Libraries}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+## v dplyr     1.1.1     v readr     2.1.4
+## v forcats   1.0.0     v stringr   1.5.0
+## v ggplot2   3.4.2     v tibble    3.2.1
+## v lubridate 1.9.2     v tidyr     1.3.0
+## v purrr     1.0.1     
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+## i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\DocumentationTok{\#\#\# loading datasets}
+\NormalTok{people\_moving\_df }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"Public\_Life.csv"}\NormalTok{)}
+\FunctionTok{View}\NormalTok{(people\_moving\_df)}
+
+\NormalTok{locations\_df }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"locations.csv"}\NormalTok{)}
+\FunctionTok{View}\NormalTok{(locations\_df)}
+\end{Highlighting}
+\end{Shaded}
+
+The datasets used in this report were sourced from the Public Life Data
+repository by Seattle's Department of Transportation (link:
+\url{https://data.seattle.gov/Transportation/Public-Life-Data-People-Moving/7rx6-5pgd}).
+The primary dataset, `Public Life Data: People Moving,' comprises
+pedestrian counts from different Seattle locations. The second dataset,
+`Locations,' contains various land use types (e.g., Residential, Mixed,
+Commercial, etc.).
+
+To illustrate the dependent variable, i.e., pedestrian movement, a
+boxplot is presented, demonstrating pedestrian counts in single-use and
+mixed-use spaces.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\# isolate relevant columns}
+\FunctionTok{unique}\NormalTok{(locations\_df}\SpecialCharTok{$}\NormalTok{location\_character)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Commercial"      "Mixed"           "Infrastructural" "CBD"            
+## [5] "Residential"     "Medical"         "Recreational"    "Civic"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{small\_loc\_df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(locations\_df}\SpecialCharTok{$}\NormalTok{location\_id, locations\_df}\SpecialCharTok{$}\NormalTok{location\_line\_typology\_vehicular)}
+\NormalTok{small\_move\_df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(people\_moving\_df}\SpecialCharTok{$}\NormalTok{unique\_moving\_id, people\_moving\_df}\SpecialCharTok{$}\NormalTok{moving\_row\_total, people\_moving\_df}\SpecialCharTok{$}\NormalTok{moving\_time\_start, people\_moving\_df}\SpecialCharTok{$}\NormalTok{moving\_time\_end, people\_moving\_df}\SpecialCharTok{$}\NormalTok{location\_id)}
+
+\DocumentationTok{\#\#\# rename columns}
+\FunctionTok{colnames}\NormalTok{(small\_loc\_df) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"location"}\NormalTok{, }\StringTok{"typology"}\NormalTok{)}
+\FunctionTok{colnames}\NormalTok{(small\_move\_df) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"id"}\NormalTok{, }\StringTok{"total\_count"}\NormalTok{, }\StringTok{"start"}\NormalTok{, }\StringTok{"end"}\NormalTok{, }\StringTok{"location"}\NormalTok{)}
+
+\DocumentationTok{\#\#\# join the dataframes}
+\NormalTok{new\_df }\OtherTok{\textless{}{-}} \FunctionTok{left\_join}\NormalTok{(small\_loc\_df, small\_move\_df, }\AttributeTok{by =} \FunctionTok{join\_by}\NormalTok{(location), }\AttributeTok{multiple =} \StringTok{"all"}\NormalTok{)}
+
+\DocumentationTok{\#\#\# creating column to categorize neighborhood types}
+\FunctionTok{unique}\NormalTok{(new\_df}\SpecialCharTok{$}\NormalTok{typology)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "Neighborhood Corridor"             "Urban Village Neighborhood"       
+##  [3] "Urban Village Neighborhood Access" "Downtown Neighborhood"            
+##  [5] "Downtown Neighborhood Access"      "Downtown"                         
+##  [7] "Urban Center Connector"            "Urban Village Main"               
+##  [9] "Neighborhood Yield Street"         "Industrial Access"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\# classify each location as either single{-}use or mixed{-}use}
+\NormalTok{new\_df}\SpecialCharTok{$}\NormalTok{classification }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(new\_df}\SpecialCharTok{$}\NormalTok{typology }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"Neighborhood Corridor"}\NormalTok{, }\StringTok{"Urban Village Neighborhood Access"}\NormalTok{, }\StringTok{"Urban Village Neighborhood"}\NormalTok{, }\StringTok{"Downtown Neighborhood"}\NormalTok{, }\StringTok{"Downtown"}\NormalTok{, }\StringTok{"Downtown Neighborhood Access"}\NormalTok{, }\StringTok{"Urban Center Connector"}\NormalTok{, }\StringTok{"Urban Village Main"}\NormalTok{), }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)}
+
+\DocumentationTok{\#\#\# add a column for count per unit of time}
+\NormalTok{new\_df}\SpecialCharTok{$}\NormalTok{start }\OtherTok{\textless{}{-}} \FunctionTok{as.POSIXlt}\NormalTok{(new\_df}\SpecialCharTok{$}\NormalTok{start, }\AttributeTok{format=}\StringTok{"\%d/\%m/\%Y \%I:\%M:\%S \%p"}\NormalTok{, }\AttributeTok{tz =} \StringTok{"UTC"}\NormalTok{, }\AttributeTok{na.rm =}\NormalTok{ T)}
+\NormalTok{new\_df}\SpecialCharTok{$}\NormalTok{end }\OtherTok{\textless{}{-}} \FunctionTok{as.POSIXlt}\NormalTok{(new\_df}\SpecialCharTok{$}\NormalTok{end, }\AttributeTok{format=}\StringTok{"\%d/\%m/\%Y \%I:\%M:\%S \%p"}\NormalTok{, }\AttributeTok{tz =} \StringTok{"UTC"}\NormalTok{, }\AttributeTok{na.rm =}\NormalTok{ T)}
+\NormalTok{new\_df}\SpecialCharTok{$}\NormalTok{duration }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{((new\_df}\SpecialCharTok{$}\NormalTok{end }\SpecialCharTok{{-}}\NormalTok{ new\_df}\SpecialCharTok{$}\NormalTok{start) }\SpecialCharTok{/} \DecValTok{60}\NormalTok{)}
+\NormalTok{new\_df}\SpecialCharTok{$}\NormalTok{count\_per\_minute }\OtherTok{\textless{}{-}}\NormalTok{ new\_df}\SpecialCharTok{$}\NormalTok{total\_count }\SpecialCharTok{/}\NormalTok{ new\_df}\SpecialCharTok{$}\NormalTok{duration}
+
+\DocumentationTok{\#\#\# add a column to label land use}
+\NormalTok{new\_df}\SpecialCharTok{$}\NormalTok{land\_use }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(new\_df}\SpecialCharTok{$}\NormalTok{classification }\SpecialCharTok{==} \DecValTok{1}\NormalTok{, }\StringTok{"Mixed Use"}\NormalTok{, }\StringTok{"Single Use"}\NormalTok{)}
+
+\DocumentationTok{\#\#\# remove NA rows}
+\NormalTok{new\_df\_clean }\OtherTok{\textless{}{-}} \FunctionTok{na.omit}\NormalTok{(new\_df)}
+
+\DocumentationTok{\#\#\# Install and load the \textquotesingle{}moments\textquotesingle{} package}
+\FunctionTok{library}\NormalTok{(moments)}
+
+\DocumentationTok{\#\# Exploratory Data Analysis}
+\DocumentationTok{\#\#\# Descriptive Statistics:}
+\DocumentationTok{\#\#\# Compute variance, standard deviation, skewness, and kurtosis}
+\NormalTok{variance }\OtherTok{\textless{}{-}} \FunctionTok{var}\NormalTok{(new\_df\_clean}\SpecialCharTok{$}\NormalTok{total\_count)}
+\NormalTok{standard\_deviation }\OtherTok{\textless{}{-}} \FunctionTok{sd}\NormalTok{(new\_df\_clean}\SpecialCharTok{$}\NormalTok{total\_count)}
+\NormalTok{skewness }\OtherTok{\textless{}{-}} \FunctionTok{skewness}\NormalTok{(new\_df\_clean}\SpecialCharTok{$}\NormalTok{total\_count)}
+\NormalTok{kurtosis }\OtherTok{\textless{}{-}} \FunctionTok{kurtosis}\NormalTok{(new\_df\_clean}\SpecialCharTok{$}\NormalTok{total\_count)}
+
+\DocumentationTok{\#\#\# Print the computed statistics}
+\FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{\textquotesingle{}Variance: \textquotesingle{}}\NormalTok{, variance))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Variance:  1349.40416411513"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{\textquotesingle{}Standard deviation: \textquotesingle{}}\NormalTok{, standard\_deviation))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Standard deviation:  36.7342369475007"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{\textquotesingle{}Skewness: \textquotesingle{}}\NormalTok{, skewness))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Skewness:  3.01251530071116"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{\textquotesingle{}Kurtosis: \textquotesingle{}}\NormalTok{, kurtosis))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Kurtosis:  16.4943502560228"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\# Correlation matrix among the quantitative variables}
+\NormalTok{correlation\_matrix }\OtherTok{\textless{}{-}} \FunctionTok{cor}\NormalTok{(new\_df\_clean[,}\FunctionTok{sapply}\NormalTok{(new\_df\_clean, is.numeric)])}
+\FunctionTok{print}\NormalTok{(correlation\_matrix)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                           id total_count classification     duration
+## id                1.00000000  0.28570061    0.216875010 -0.030594322
+## total_count       0.28570061  1.00000000    0.033722809 -0.068682289
+## classification    0.21687501  0.03372281    1.000000000 -0.003323461
+## duration         -0.03059432 -0.06868229   -0.003323461  1.000000000
+## count_per_minute         NaN         NaN            NaN          NaN
+##                  count_per_minute
+## id                            NaN
+## total_count                   NaN
+## classification                NaN
+## duration                      NaN
+## count_per_minute                1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\# Boxplot}
+\FunctionTok{ggplot}\NormalTok{(new\_df\_clean, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ land\_use, }\AttributeTok{y =}\NormalTok{ total\_count, }\AttributeTok{fill =}\NormalTok{ land\_use)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Land Use Diversity"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{ (}\StringTok{"Number of People Moving"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"none"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{state321_final_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\# Violin plot with different colors for single{-}use and mixed{-}use}
+\FunctionTok{ggplot}\NormalTok{(new\_df\_clean, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ land\_use, }\AttributeTok{y =}\NormalTok{ total\_count, }\AttributeTok{fill =}\NormalTok{ land\_use)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_violin}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{(}\AttributeTok{width=}\FloatTok{0.1}\NormalTok{, }\AttributeTok{fill=}\StringTok{"white"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Land Use Diversity"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{ (}\StringTok{"Number of People Moving"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"none"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{state321_final_files/figure-latex/unnamed-chunk-2-2.pdf}
+
+\hypertarget{section-three-results}{%
+\subsection{Section Three: Results}\label{section-three-results}}
+
+\hypertarget{a-results-section-containing-a-scatterplot-of-the-main-relationship-of-interest-and-output-for-the-main-regression}{%
+\subsubsection{A results section containing a scatterplot of the main
+relationship of interest and output for the main
+regression}\label{a-results-section-containing-a-scatterplot-of-the-main-relationship-of-interest-and-output-for-the-main-regression}}
+
+\hypertarget{statistical-analysis}{%
+\subsection{Statistical Analysis}\label{statistical-analysis}}
+
+\hypertarget{bivariate-regression-total_count-classification}{%
+\subsubsection{Bivariate regression: total\_count \textasciitilde{}
+classification}\label{bivariate-regression-total_count-classification}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model1 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(total\_count }\SpecialCharTok{\textasciitilde{}}\NormalTok{ classification, }\AttributeTok{data =}\NormalTok{ new\_df\_clean)}
+\FunctionTok{summary}\NormalTok{(model1)  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = total_count ~ classification, data = new_df_clean)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -32.227 -22.227 -11.227   6.773 301.773 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(>|t|)   
+## (Intercept)      24.050      8.214   2.928   0.0035 **
+## classification    8.177      8.312   0.984   0.3255   
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 36.73 on 850 degrees of freedom
+## Multiple R-squared:  0.001137,   Adjusted R-squared:  -3.79e-05 
+## F-statistic: 0.9677 on 1 and 850 DF,  p-value: 0.3255
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Add controls progressively and present the full specification?}
+\CommentTok{\# model2 \textless{}{-} lm(total\_count \textasciitilde{} classification + control1, data = new\_df\_clean)}
+\CommentTok{\# summary(model2)}
+
+\CommentTok{\# model3 \textless{}{-} lm(total\_count \textasciitilde{} classification + control1 + control2, data = new\_df\_clean)}
+\CommentTok{\# summary(model3)}
+
+\CommentTok{\# Final model with all controls}
+\CommentTok{\# model4 \textless{}{-} lm(total\_count \textasciitilde{} classification + control1 + control2 + control3, data = new\_df\_clean)}
+\CommentTok{\# summary(model4)}
+\end{Highlighting}
+\end{Shaded}
+
+To illustrate the main relationship of interest, a scatterplot is
+provided below. The scatterplot showcases the distribution of pedestrian
+counts relative to land use diversity.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# remove rows with NAs}
+\NormalTok{new\_df\_clean }\OtherTok{\textless{}{-}} \FunctionTok{na.omit}\NormalTok{(new\_df)}
+
+\CommentTok{\# generate the scatterplot}
+\FunctionTok{ggplot}\NormalTok{(new\_df\_clean, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ land\_use, }\AttributeTok{y =}\NormalTok{ total\_count, }\AttributeTok{color =}\NormalTok{ land\_use)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_jitter}\NormalTok{(}\AttributeTok{width =} \FloatTok{0.3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Land Use"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Pedestrians Through the Space"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{state321_final_files/figure-latex/unnamed-chunk-4-1.pdf}
+The principal regression analysis was performed with the `total\_count'
+as the outcome variable and `classification' (land use diversity) as the
+explanatory variable. The regression output is as follows:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(total\_count }\SpecialCharTok{\textasciitilde{}}\NormalTok{ classification, }\AttributeTok{data =}\NormalTok{ new\_df)}
+\FunctionTok{summary}\NormalTok{(model)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = total_count ~ classification, data = new_df)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -36.379 -25.379 -11.379   9.621 297.621 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(>|t|)   
+## (Intercept)      19.531      7.207   2.710  0.00678 **
+## classification   16.848      7.256   2.322  0.02032 * 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 40.77 on 2376 degrees of freedom
+##   (4 observations deleted due to missingness)
+## Multiple R-squared:  0.002264,   Adjusted R-squared:  0.001844 
+## F-statistic: 5.391 on 1 and 2376 DF,  p-value: 0.02032
+\end{verbatim}
+
+The model indicates a significant positive relationship between land use
+diversity and pedestrian activity. This relationship suggests that a
+higher level of land use diversity corresponds to an increase in
+pedestrian movement.
+
+\hypertarget{conclusion}{%
+\subsection{Conclusion}\label{conclusion}}
+
+\hypertarget{a-brief-conclusion-summarizing-the-results-assesses-the-extent-to-which-you-found-support-for-your-hypothesis-and-describes-limitations-of-your-analysis-and-threats-to-inference}{%
+\subsubsection{A brief conclusion summarizing the results, assesses the
+extent to which you found support for your hypothesis, and describes
+limitations of your analysis and threats to
+inference}\label{a-brief-conclusion-summarizing-the-results-assesses-the-extent-to-which-you-found-support-for-your-hypothesis-and-describes-limitations-of-your-analysis-and-threats-to-inference}}
+
+The analysis provides evidence supporting our hypothesis that land use
+diversity positively influences pedestrian activity in Seattle. This
+finding has significant implications for urban development strategies
+and the promotion of pedestrian-friendly environments.
+
+However, these results should be interpreted with some limitations in
+mind. The study is observational and, as such, cannot confirm causality.
+Additionally, the model explains a relatively small portion of the
+variance in pedestrian activity, indicating that other factors beyond
+land use diversity likely contribute significantly to pedestrian
+movement.
+
+Moving forward, research may consider incorporating more variables into
+the analysis, such as population density, available amenities, and
+public transportation facilities, to gain a more comprehensive
+understanding of pedestrian activity determinants.
+
+Despite the limitations, this analysis provides valuable insights into
+urban design and planning, hinting that land use diversity can foster
+more vibrant, pedestrian-friendly environments. The results of this
+study provide a stepping stone for future research exploring urban
+environments and pedestrian activity.
+
+\end{document}
