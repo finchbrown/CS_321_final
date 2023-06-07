@@ -1,4 +1,5 @@
 library(tidyverse)
+library(vioplot)
 
 # loading data
 people_moving_df <- read.csv("Public_Life.csv")
@@ -50,6 +51,13 @@ boxplot <- ggplot(new_df, aes(x = land_use,
   ylab ("Number of People Moving") +
   theme(legend.position = "none")
 boxplot
+
+# making a violin plot
+
+vioplot(new_df, 
+        aes(x = ,
+            y = total_count,
+            fill = land_use), na.rm = TRUE)
 
 
 # making a scatterplot 
