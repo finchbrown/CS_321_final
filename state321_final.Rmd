@@ -6,6 +6,8 @@ date: "2023-06-05"
 # FINAL Report: Investigating The Relationship Between Land Use Diversity and Pedestrian Activity in Seattle
 ### Authors: Finch Brown and JP Lopez
 
+```{r}
+
 ## Prerequisite
 ### Load Libraries
 install.packages("tidyverse")
@@ -21,6 +23,8 @@ View(people_moving_df)
 
 locations_df <- read.csv("locations.csv")
 View(locations_df)
+
+```
 
 ## Introduction and Research Design
 The primary research question guiding this investigation is: Does land use diversity influence the level of pedestrian activity in urban spaces? This study's focus stems from the conjecture that diversity in land use could be a significant factor influencing the movement of pedestrians. From a theoretical perspective, diverse land uses offer more opportunities for activity and thus draw more pedestrian traffic. Therefore, our hypothesis for this study is as follows:
@@ -41,6 +45,8 @@ If the data analysis reveals a significant positive relationship between land us
 The datasets used in this report were sourced from the Public Life Data repository by Seattle's Department of Transportation (link: https://data.seattle.gov/Transportation/Public-Life-Data-People-Moving/7rx6-5pgd). The primary dataset, 'Public Life Data: People Moving,' comprises pedestrian counts from different Seattle locations. The second dataset, 'Locations,' contains various land use types (e.g., Residential, Mixed, Commercial, etc.).
 
 To illustrate the dependent variable, i.e., pedestrian movement, a boxplot is presented, demonstrating pedestrian counts in single-use and mixed-use spaces.
+
+```{r}
 
 ### isolate relevant columns
 unique(locations_df$location_character)
@@ -109,11 +115,17 @@ ggplot(new_df_clean, aes(x = land_use, y = total_count, fill = land_use)) +
   ylab ("Number of People Moving") +
   theme(legend.position = "none")
 
+```
+
+
 ## Section Three: Results
 ### A results section containing a scatterplot of the main relationship of interest and output for the main regression
 
 ## Statistical Analysis
 ### Bivariate regression: total_count ~ classification
+
+
+```{r}
 model1 <- lm(total_count ~ classification, data = new_df_clean)
 summary(model1)  
 
@@ -142,6 +154,8 @@ ggplot(new_df_clean, aes(x = land_use, y = total_count, color = land_use)) +
 The principal regression analysis was performed with the 'total_count' as the outcome variable and 'classification' (land use diversity) as the explanatory variable. The regression output is as follows:
 model <- lm(total_count ~ classification, data = new_df)
 summary(model)
+```
+
 
 The model indicates a significant positive relationship between land use diversity and pedestrian activity. This relationship suggests that a higher level of land use diversity corresponds to an increase in pedestrian movement.
 
@@ -153,4 +167,4 @@ However, these results should be interpreted with some limitations in mind. The 
 
 Moving forward, research may consider incorporating more variables into the analysis, such as population density, available amenities, and public transportation facilities, to gain a more comprehensive understanding of pedestrian activity determinants.
 
-Despite the limitations, this analysis provides valuable insights into urban design and planning, hinting that land use diversity can foster more vibrant, pedestrian-friendly environments. The results of this study provide a stepping stone for future research exploring urban environments and pedestrian activity
+Despite the limitations, this analysis provides valuable insights into urban design and planning, hinting that land use diversity can foster more vibrant, pedestrian-friendly environments. The results of this study provide a stepping stone for future research exploring urban environments and pedestrian activity. 
