@@ -43,21 +43,20 @@ new_df$count_per_minute <- new_df$total_count / new_df$duration
 
 new_df$land_use <- ifelse(new_df$classification == 1, "Mixed Use", "Single Use")
 
-boxplot <- ggplot(new_df, aes(x = land_use, 
+boxplot <- ggplot(new_df, aes(x = typology,
                               y = total_count,
-                              fill = land_use), na.rm = TRUE) + 
+                              fill = land_use),
+                  na.rm = TRUE) + 
   geom_boxplot() +
   xlab("Land Use Diversity") +
   ylab ("Number of People Moving") +
+ scale_fill_manual(values=c("#69b3a2", "orange")) +
   theme(legend.position = "none")
 boxplot
 
 # making a violin plot
 
-vioplot(new_df, 
-        aes(x = ,
-            y = total_count,
-            fill = land_use), na.rm = TRUE)
+vioplot(new_df)
 
 
 # making a scatterplot 
