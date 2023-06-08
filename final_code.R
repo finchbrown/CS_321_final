@@ -72,3 +72,15 @@ model <- lm(total_count ~ classification, data = new_df)
 summary(model)
 
 plot(model)
+
+
+# Add controls progressively and present the full specification?
+# model2 <- lm(total_count ~ classification + control1, data = new_df_clean)
+# summary(model2)
+
+# model3 <- lm(total_count ~ classification + control1 + control2, data = new_df_clean)
+# summary(model3)
+
+# Final model with all controls
+# model4 <- lm(total_count ~ classification + control1 + control2 + control3, data = new_df_clean)
+# summary(model4)

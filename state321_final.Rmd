@@ -108,12 +108,13 @@ boxplot <- ggplot(new_df, aes(x = typology,
                               y = total_count,
                               fill = land_use),
                   na.rm = TRUE) +
+  guides(fill = guide_legend(title = "Land Use")) +
   geom_boxplot() +
   xlab("Land Use Diversity") +
   ylab ("Number of People Moving") +
   scale_x_discrete(guide=guide_axis(n.dodge = 3)) +
  scale_fill_manual(values=c("#69b3a2", "orange")) +
-  theme(legend.position = "none")
+  theme()
 boxplot
 
 ### Violin plot with different colors for single-use and mixed-use
@@ -137,17 +138,6 @@ ggplot(new_df_clean, aes(x = land_use, y = total_count, fill = land_use)) +
 ```{r}
 model1 <- lm(total_count ~ classification, data = new_df_clean)
 summary(model1)  
-
-# Add controls progressively and present the full specification?
-# model2 <- lm(total_count ~ classification + control1, data = new_df_clean)
-# summary(model2)
-
-# model3 <- lm(total_count ~ classification + control1 + control2, data = new_df_clean)
-# summary(model3)
-
-# Final model with all controls
-# model4 <- lm(total_count ~ classification + control1 + control2 + control3, data = new_df_clean)
-# summary(model4)
 ```
 To illustrate the main relationship of interest, a scatterplot is provided below. The scatterplot showcases the distribution of pedestrian counts relative to land use diversity.
 
