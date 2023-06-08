@@ -17,7 +17,7 @@ H1: Land use diversity positively influences pedestrian activity. (β_diversity 
 
 The importance of this research lies in its potential implications for urban development and planning, ultimately encouraging active and sustainable urban environments.
 
-The research design for this investigation utilizes observational data from real-world observations in Seattle. We have categorized each location according to the classifications used by the Gehl Institute's Public Life Data Protocol, distinguishing them into mostly single-use or mixed-use areas based on the descriptions of each classification from the Gehl Institute. Our measurement of pedestrian activity is based on total counts of moving pedestrians recorded in each entry of the dataset.
+The research design for this investigation utilizes observational data from real-world observations in Seattle. We have categorized each location according to the classifications used by the Gehl Institute's Public Life Data Protocol (link: https://streetsillustrated.seattle.gov/street-type-standards/street-classification/), distinguishing them into mostly single-use or mixed-use areas based on the descriptions of each classification from the Gehl Institute. Our measurement of pedestrian activity is based on total counts of moving pedestrians recorded in each entry of the dataset.
 
 If the data analysis reveals a significant positive relationship between land use diversity and pedestrian activity, it will provide empirical support for our hypothesis, underscoring the contribution of diverse land use to increased pedestrian movement.
 
@@ -65,7 +65,7 @@ new_df <- left_join(small_loc_df, small_move_df, by = join_by(location), multipl
 unique(new_df$typology)
 
 ### classify each location as either single-use or mixed-use
-new_df$classification <- ifelse(new_df$typology %in% c("Neighborhood Corridor", "Urban Village Neighborhood Access", "Urban Village Neighborhood", "Downtown Neighborhood", "Downtown", "Downtown Neighborhood Access", "Urban Center Connector", "Urban Village Main"), 1, 0)
+new_df$classification <- ifelse(new_df$typology %in% c("Urban Village Neighborhood Access", "Urban Village Neighborhood", "Downtown Neighborhood", "Downtown", "Urban Center Connector", "Urban Village Main"), 1, 0)
 
 ### add a column for count per unit of time
 new_df$start <- as.POSIXlt(new_df$start, format="%d/%m/%Y %I:%M:%S %p", tz = "UTC", na.rm = T)
@@ -79,7 +79,7 @@ new_df$land_use <- ifelse(new_df$classification == 1, "Mixed Use", "Single Use")
 ### remove NA rows
 new_df_clean <- na.omit(new_df)
 
-### Install and load the 'moments' package
+### load the 'moments' package
 library(moments)
 
 ## Exploratory Data Analysis
@@ -101,17 +101,17 @@ correlation_matrix <- cor(new_df_clean[,sapply(new_df_clean, is.numeric)])
 print(correlation_matrix)
 
 ### Boxplot
-# making a boxplot
 
 new_df$land_use <- ifelse(new_df$classification == 1, "Mixed Use", "Single Use")
 
 boxplot <- ggplot(new_df, aes(x = typology,
                               y = total_count,
                               fill = land_use),
-                  na.rm = TRUE) + 
+                  na.rm = TRUE) +
   geom_boxplot() +
   xlab("Land Use Diversity") +
   ylab ("Number of People Moving") +
+  scale_x_discrete(guide=guide_axis(n.dodge = 3)) +
  scale_fill_manual(values=c("#69b3a2", "orange")) +
   theme(legend.position = "none")
 boxplot
